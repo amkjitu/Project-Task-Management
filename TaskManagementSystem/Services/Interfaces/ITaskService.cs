@@ -1,4 +1,5 @@
-﻿using TaskManagementSystem.Models;
+﻿using TaskManagementSystem.Enums;
+using TaskManagementSystem.Models;
 
 namespace TaskManagementSystem.Services.Interfaces
     {
@@ -9,5 +10,10 @@ namespace TaskManagementSystem.Services.Interfaces
         Task AddTaskAsync(TaskModel task);
         Task UpdateTaskAsync(TaskModel task);
         Task DeleteTaskAsync(int id);
+
+        ///new
+        Task<IEnumerable<TaskModel>> FilterTasksAsync(int? userId, string? priority, string? status);
+        Task<Dictionary<string, int>> GetTotalTasksByStatusAsync();
+        Task<IEnumerable<TaskModel>> GetOverdueTasksAsync();
         }
     }

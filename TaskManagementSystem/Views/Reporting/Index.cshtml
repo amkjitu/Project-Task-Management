@@ -1,0 +1,122 @@
+﻿@model TaskManagementSystem.Models.TaskModel
+
+@{
+    ViewData["Title"] = "Task Reporting and Filtering";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Task Reporting and Filtering</h1>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h2>Filter Tasks</h2>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm" method="get" asp-action="FilteredTasks">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="user" class="form-label">User:</label>
+                                <select id="user" name="userId" class="form-select">
+                                    <option value="">All Users</option>
+                                    @foreach (var user in ViewBag.Users)
+                                    {
+                                        <option value="@user.Id">@user.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="priority" class="form-label">Priority:</label>
+                                <select id="priority" name="priority" class="form-select">
+                                    <option value="">All Priorities</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="status" class="form-label">Status:</label>
+                                <select id="status" name="status" class="form-select">
+                                    <option value="">All Statuses</option>
+                                    <option value="To-Do">To-Do</option>
+                                    <option value="InProgress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="filteredTasks">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('filterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var form = this;
+            fetch(form.action + '?' + new URLSearchParams(new FormData(form)))
+                .then(response => response.text())
+                .then(html => document.getElementById('filteredTasks').innerHTML = html);
+        });
+    </script>
+}
+
+@* @model TaskManagementSystem.Models.TaskModel *@
+@* @{ *@
+@*     ViewData["Title"] = "Task Reporting and Filtering"; *@
+@* } *@
+
+@* <h1>Task Reporting and Filtering</h1> *@
+
+@* <h2>Filter Tasks</h2> *@
+@* <form id="filterForm" method="get" asp-action="FilteredTasks"> *@
+@*     <label for="user">User:</label> *@
+@*     <select id="user" name="userId"> *@
+@*         <option value="">All Users</option> *@
+@*         @foreach (var user in ViewBag.Users) *@
+@*         { *@
+@*             <option value="@user.Id">@user.Name</option> *@
+@*         } *@
+@*     </select> *@
+
+@*     <label for="priority">Priority:</label> *@
+@*     <select id="priority" name="priority"> *@
+@*         <option value="">All Priorities</option> *@
+@*         <option value="Low">Low</option> *@
+@*         <option value="Medium">Medium</option> *@
+@*         <option value="High">High</option> *@
+@*     </select> *@
+
+@*     <label for="status">Status:</label> *@
+@*     <select id="status" name="status"> *@
+@*         <option value="">All Statuses</option> *@
+@*         <option value="To-Do">To-Do</option> *@
+@*         <option value="InProgress">In Progress</option> *@
+@*         <option value="Completed">Completed</option> *@
+@*     </select> *@
+
+@*     <button type="submit">Filter</button> *@
+@* </form> *@
+
+@* <div id="filteredTasks"> *@
+@*     <!-- Partial view will load here --> *@
+@* </div> *@
+
+@* @section Scripts { *@
+@*     <script> *@
+@*         document.getElementById('filterForm').addEventListener('submit', function (e) { *@
+@*             e.preventDefault(); *@
+@*             var form = this; *@
+@*             fetch(form.action + '?' + new URLSearchParams(new FormData(form))) *@
+@*                 .then(response => response.text()) *@
+@*                 .then(html => document.getElementById('filteredTasks').innerHTML = html); *@
+@*         }); *@
+@*     </script> *@
+@* } *@
