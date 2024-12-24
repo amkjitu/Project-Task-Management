@@ -1,17 +1,23 @@
-﻿namespace TaskManagementSystem.Models
+﻿namespace TaskManagementSystem.Enums
     {
-    public enum TaskPriority
+    public enum Role
         {
-        Low = 1,
-        Medium = 2,
-        High = 3
+        Admin,
+        Manager,
+        User
         }
 
-    public enum TaskStatus
+    public enum Priority
         {
-        ToDo = 1,
-        InProgress = 2,
-        Completed = 3
+        Low,
+        Medium,
+        High
+        }
+
+    public enum Status
+        {
+        ToDo,
+        InProgress,
+        Completed
         }
     }
-

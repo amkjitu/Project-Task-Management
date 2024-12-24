@@ -1,0 +1,38 @@
+﻿@model TaskManagementSystem.Models.UserModel
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Delete User</h1>
+            <p>Are you sure you want to delete this user?</p>
+            <form asp-action="DeleteConfirmed">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <p class="form-control-plaintext">@Model.Name</p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <p class="form-control-plaintext">@Model.Email</p>
+                </div>
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* @model TaskManagementSystem.Models.UserModel *@
+
+@* <h1>Delete User</h1> *@
+@* <p>Are you sure you want to delete this user?</p> *@
+@* <form asp-action="DeleteConfirmed"> *@
+@*     <input type="hidden" asp-for="Id" /> *@
+@*     <p>Name: @Model.Name</p> *@
+@*     <p>Email: @Model.Email</p> *@
+@*     <button type="submit">Delete</button> *@
+@* </form> *@

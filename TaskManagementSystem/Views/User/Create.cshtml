@@ -1,0 +1,53 @@
+﻿@model TaskManagementSystem.Models.UserModel
+
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Create User</h1>
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Role" class="form-label">Role</label>
+                    <select asp-for="Role" class="form-select">
+                        <option value="Admin">Admin</option>
+                        <option value="Manager">Manager</option>
+                        <option value="User">User</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* @model TaskManagementSystem.Models.UserModel *@
+
+@* <h1>Create User</h1> *@
+@* <form asp-action="Create"> *@
+@*     <label>Name</label> *@
+@*     <input asp-for="Name" /> *@
+@*     <label>Email</label> *@
+@*     <input asp-for="Email" /> *@
+@*     <label>Role</label> *@
+@*     <select asp-for="Role"> *@
+@*         <option value="Admin">Admin</option> *@
+@*         <option value="Manager">Manager</option> *@
+@*         <option value="User">User</option> *@
+@*     </select> *@
+@*     <button type="submit">Create</button> *@
+@* </form> *@

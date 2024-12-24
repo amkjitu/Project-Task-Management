@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TaskManagementSystem.Models.UserTaskMappingModel>
+
+@{
+    ViewData["Title"] = "Assign Task to User";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Assign Task to User</h1>
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Assign Task</a>
+            </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var mapping in Model)
+                    {
+                        <tr>
+                            <td>@mapping.User.Name</td>
+                            <td>@mapping.Task.Title</td>
+                            <td>@mapping.Task.DueDate.ToString("dd MMM yyyy")</td>
+                            <td class="text-center">
+                                <a asp-action="Edit" asp-route-id="@mapping.Id" class="btn btn-sm btn-warning">Edit</a> |
+                                <a asp-action="Delete" asp-route-id="@mapping.Id" class="btn btn-sm btn-danger">Delete</a>                        
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@* @model IEnumerable<TaskManagementSystem.Models.UserTaskMappingModel> *@
+
+@* <h1>User-Task Mappings</h1> *@
+@* <a asp-action="Create">Add Mapping</a> *@
+@* <table> *@
+@*     <thead> *@
+@*         <tr> *@
+@*             <th>User</th> *@
+@*             <th>Task</th> *@
+@*             <th>Actions</th> *@
+@*         </tr> *@
+@*     </thead> *@
+@*     <tbody> *@
+@*         @foreach (var mapping in Model) *@
+@*         { *@
+@*             <tr> *@
+@*                 <td>@mapping.User.Name</td> *@
+@*                 <td>@mapping.Task.Title</td> *@
+@*                 <td>@mapping.Task.DueDate</td> *@
+@*                 <td> *@
+@*                     <a asp-action="Delete" asp-route-id="@mapping.Id">Delete</a> *@
+@*                 </td> *@
+@*             </tr> *@
+@*         } *@
+@*     </tbody> *@
+@* </table> *@

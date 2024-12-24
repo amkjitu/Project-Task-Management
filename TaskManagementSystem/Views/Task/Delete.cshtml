@@ -1,0 +1,11 @@
+﻿@model TaskManagementSystem.Models.TaskModel
+
+<h1>Delete Task</h1>
+<p>Are you sure you want to delete this task?</p>
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <p>Title: @Model.Title</p>
+    <p>Description: @Model.Description</p>
+    <p>Due Date: @Model.DueDate.ToShortDateString()</p>
+    <button type="submit">Delete</button>
+</form>

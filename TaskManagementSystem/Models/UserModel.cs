@@ -1,10 +1,13 @@
-﻿namespace TaskManagementSystem.Models
+﻿using System.Data;
+using TaskManagementSystem.Enums;
+
+namespace TaskManagementSystem.Models
     {
     public class UserModel
         {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Role { get; set; } // Example: Admin, Manager, User
+        public Role Role { get; set; }
         }
     }

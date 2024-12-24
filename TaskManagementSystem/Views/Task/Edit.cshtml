@@ -1,0 +1,79 @@
+﻿@model TaskManagementSystem.Models.TaskModel
+
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Edit Task</h1>
+            <form asp-action="Edit">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Title</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="2"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Priority" class="form-label">Priority</label>
+                        <select asp-for="Priority" class="form-select">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                        <span asp-validation-for="Priority" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Status" class="form-label">Status</label>
+                        <select asp-for="Status" class="form-select">
+                            <option value="ToDo">To-Do</option>
+                            <option value="InProgress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="DueDate" class="form-label">Due Date</label>
+                    <input asp-for="DueDate" class="form-control" type="date" />
+                    <span asp-validation-for="DueDate" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* @model TaskManagementSystem.Models.TaskModel *@
+
+@* <h1>Edit Task</h1> *@
+@* <form asp-action="Edit"> *@
+@*     <input type="hidden" asp-for="Id" /> *@
+@*     <label>Title</label> *@
+@*     <input asp-for="Title" /> *@
+@*     <label>Description</label> *@
+@*     <textarea asp-for="Description"></textarea> *@
+@*     <label>Priority</label> *@
+@*     <select asp-for="Priority"> *@
+@*         <option value="Low">Low</option> *@
+@*         <option value="Medium">Medium</option> *@
+@*         <option value="High">High</option> *@
+@*     </select> *@
+@*     <label>Status</label> *@
+@*     <select asp-for="Status"> *@
+@*         <option value="ToDo">To-Do</option> *@
+@*         <option value="InProgress">In Progress</option> *@
+@*         <option value="Completed">Completed</option> *@
+@*     </select> *@
+@*     <label>Due Date</label> *@
+@*     <input asp-for="DueDate" type="date" /> *@
+@*     <button type="submit">Save</button> *@
+@* </form> *@
