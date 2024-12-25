@@ -7,10 +7,11 @@ namespace TaskManagementSystem.Services.Implementations
     {
     public class TaskService : ITaskService
         {
-        private readonly ITaskRepository _taskRepository;
+        //private readonly ITaskRepository _taskRepository;
         private readonly IGenericRepository<UserTaskMappingModel> _mappingRepository;
+        private readonly IGenericRepository<TaskModel> _taskRepository;
 
-        public TaskService(ITaskRepository taskRepository, IGenericRepository<UserTaskMappingModel> mappingRepository)
+        public TaskService(IGenericRepository<TaskModel> taskRepository, IGenericRepository<UserTaskMappingModel> mappingRepository)
             {
             _taskRepository = taskRepository;
             _mappingRepository = mappingRepository;

@@ -18,9 +18,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 //builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<IUserTaskMappingRepository, UserTaskMappingRepository>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+//builder.Services.AddScoped<IUserTaskMappingRepository, UserTaskMappingRepository>();
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITaskService, TaskService>();

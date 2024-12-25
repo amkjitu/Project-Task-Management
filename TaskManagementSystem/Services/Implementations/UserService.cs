@@ -6,9 +6,10 @@ namespace TaskManagementSystem.Services.Implementations
     {
     public class UserService : IUserService
         {
-        private readonly IUserRepository _userRepository;
+        //private readonly IUserRepository _userRepository;
+        private readonly IGenericRepository<UserModel> _userRepository;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IGenericRepository<UserModel> userRepository)
             {
             _userRepository = userRepository;
             }

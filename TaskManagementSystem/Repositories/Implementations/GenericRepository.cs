@@ -26,6 +26,15 @@ namespace TaskManagementSystem.Repositories.Implementations
             return await _dbSet.ToListAsync();
             }
 
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+            {
+            return await _dbSet.FirstOrDefaultAsync(predicate);
+            }
+
+        ////for readonly
+        //public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate) =>
+        //    await _dbSet.AsNoTracking().FirstOrDefaultAsync(predicate);
+
         public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
             {
             return await _dbSet.Where(predicate).ToListAsync();

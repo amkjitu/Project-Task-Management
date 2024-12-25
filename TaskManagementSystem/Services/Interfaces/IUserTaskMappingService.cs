@@ -7,6 +7,7 @@ namespace TaskManagementSystem.Services.Interfaces
         Task<IEnumerable<UserTaskMappingModel>> GetAllMappingsAsync();
         Task AddMappingAsync(UserTaskMappingModel mapping);
         Task<UserTaskMappingModel?> GetMappingByIdAsync(int id); // Updated to match the implementation
+        Task<UserTaskMappingModel> GetUserTaskMappingAsync(int userId, int todoListId);
         Task DeleteMappingAsync(int id);
         Task UpdateMappingAsync(UserTaskMappingModel mapping);
         }
